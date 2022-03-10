@@ -28,5 +28,17 @@ int string_index(char *s, char *subs)
       return i;
   return -1;
 }
-
+void output(char *string, char *substring, int index)
+{
+  printf("the index of ")
+}
+int main()
+{
+  char s,s1,s2,subs;
+   string_length(&s);
+   string_ncmp(&s1,&s2);
+ string_index(&s,&subs);
+  return 0;
+  
+}
 /* Understand and debug the functions and write main */
