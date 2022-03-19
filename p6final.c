@@ -1,44 +1,32 @@
-/* Write a program to find the index of a substring of a string.
-void input_string(char *a);
-int str_reverse(char *string, char *substring);
-void output(char *string, char *substring, int index); */
-
-int string_length(char *s)
+#include<stdio.h>
+#include<string.h>
+void input_string(char*a)
 {
-  int i;
-  for(i=0;s[i]!='\0';i++);
-  return i;
+  printf("enter the string\n");
+  scanf("%s",a);
 }
-
-int string_ncmp(char *s1,char *s2)
+int count_words(char*string)
 {
-  for(int i=0; i<n && s1[i]==s2[i] && s1[i] != '\0';i++);
-  return s1[i] - s2[i];
+  int no_words=1;
+  for(int i=0;string[i]!='\0';i++)
+    {
+      if(string[i]== ' '|| string[i]=='\n'|| string[i]=='\t')
+        {
+          no_words++;
+        }
+    }
+  return no_words;
 }
-
-
-int string_index(char *s, char *subs)
+void output(char *string, int no_words)
 {
-  int l1=string_lenght(s);
-  int l2=string_lenght(subs);
-  if l1 < l2
-      return -1;
-  for(int i=0;i<l1-l2;i++)
-    if (string_nscmp(s,subs))
-      return i;
-  return -1;
-}
-void output(char *string, char *substring, int index)
-{
-  printf("the index of ")
+  printf("the number of words in the string %s is %d\n",string,no_words);
 }
 int main()
 {
-  char s,s1,s2,subs;
-   string_length(&s);
-   string_ncmp(&s1,&s2);
- string_index(&s,&subs);
+  char a,s[100];
+  int no_words;
+  input_string(&a);
+  no_words=count_words(s);
+  output(s,no_words);
   return 0;
-  
 }
-/* Understand and debug the functions and write main */
